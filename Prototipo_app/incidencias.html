@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Heustonn</title>
+  <title>HogarProtegido</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -37,7 +37,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Heustonn
+              HogarProtegido
             </span>
           </a>
           <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
@@ -50,7 +50,7 @@
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="incidencias.html"> Incidencias </a>
@@ -59,7 +59,7 @@
                   <a class="nav-link" href="#"> Services </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="contact.html">Contactanos</a>
                 </li>
                 
               </ul>
@@ -99,9 +99,26 @@
                 <label for="image3">Image 3 Perfil Izquierdo:</label>
                 <input type="file" name="image3" id="image3">
 
+                <!-- Div para preguntas dinámicas -->
+                <div id="dynamic_questions">
+                  <div id="dynamic_questions">
+                    <!-- Preguntas dinámicas se insertarán aquí -->
+                    <label for="tipo_daño">Tipo de daño:</label>
+                    <input type="text" name="tipo_daño" id="tipo_daño">
+                    <label for="gravedad">Gravedad del daño:</label>
+                    <select name="gravedad" id="gravedad">
+                      <option value="leve">Leve</option>
+                      <option value="moderado">Moderado</option>
+                      <option value="grave">Grave</option>
+                    </select>
+                  </div>
+                  
+                </div>
+
+
                 <div class="d-flex justify-content-center ">
                     <button>
-                      SEND
+                      ENVIAR
                     </button>
                   </div>
             </form>
@@ -112,6 +129,37 @@
     </div>
   </section>
 
+  <script>
+    // Función para mostrar preguntas dinámicas según la tipología del objeto dañado
+    function mostrarPreguntasDinamicas(tipologia) {
+      // Lógica para determinar qué preguntas mostrar según la tipología
+      let preguntasHtml = '';
+      if (tipologia === 'vajilla') {
+        preguntasHtml = `
+          <label for="tipo_daño">Tipo de daño en la vajilla:</label>
+          <input type="text" name="tipo_daño" id="tipo_daño">
+          <label for="cantidad">Cantidad de piezas dañadas:</label>
+          <input type="number" name="cantidad" id="cantidad">
+        `;
+      } else if (tipologia === 'mueble') {
+        preguntasHtml = `
+          <label for="material">Material del mueble:</label>
+          <input type="text" name="material" id="material">
+          <label for="color">Color del mueble:</label>
+          <input type="text" name="color" id="color">
+        `;
+      }
+      // Insertar preguntas dinámicas en el formulario
+      document.getElementById('dynamic_questions').innerHTML = preguntasHtml;
+    }
+  
+    // Evento para cambiar las preguntas dinámicas cuando se seleccione una tipología
+    document.getElementById('tipologia_objeto').addEventListener('change', function() {
+      const tipologiaSeleccionada = this.value;
+      mostrarPreguntasDinamicas(tipologiaSeleccionada);
+    });
+  </script>
+
   <!-- end contact section -->
 
   <!-- info section -->
@@ -121,38 +169,42 @@
         <div class="col-md-3">
           <div class="info-logo">
             <h2>
-              Heustonn
+              HogarProtegido
             </h2>
             <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page when
-              looking at its layout. The point of
+              Estamos aquí para proteger tu hogar y ofrecerte la tranquilidad que necesitas. ¡Descubre nuestros servicios hoy mismo!
             </p>
           </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div class="info-nav">
             <h4>
-              Navigation
+              Navegación
             </h4>
             <ul>
               <li>
                 <a href="index.html">
-                  Home
+                  Inicio
                 </a>
               </li>
               <li>
-                <a href="incidencias.html">
-                  Incidencias
+                <a href="about.html">
+                  Nosotr@s
                 </a>
               </li>
               <li>
-                <a href="#">
-                  Services
+                <a href="service.html">
+                  Servicios
                 </a>
               </li>
               <li>
                 <a href="contact.html">
-                  Contact Us
+                  Contactanos
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Iniciar sesión
                 </a>
               </li>
             </ul>
@@ -161,27 +213,27 @@
         <div class="col-md-3">
           <div class="info-contact">
             <h4>
-              Contact Info
+              Información de contacto
             </h4>
             <div class="location">
               <h6>
-                Corporate Office Address:
+                Dirección de nuestra oficina:
               </h6>
               <a href="">
                 <img src="images/location.png" alt="">
                 <span>
-                  Loram ipusm New York, NY 36524
+                  Universidad de Deusto Bilbao, BIO 48009
                 </span>
               </a>
             </div>
             <div class="call">
               <h6>
-                Customer Service:
+                Servicio al cliente:
               </h6>
               <a href="">
                 <img src="images/telephone.png" alt="">
                 <span>
-                  ( +01 1234567890 )
+                  ( +34 6928374659 )
                 </span>
               </a>
             </div>
@@ -190,28 +242,28 @@
         <div class="col-md-3">
           <div class="discover">
             <h4>
-              Discover
+              Descubre
             </h4>
             <ul>
               <li>
                 <a href="">
-                  Help
+                  Ayuda
                 </a>
               </li>
               <li>
                 <a href="">
-                  How It Works
+                  Como funciona
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  subscribe
+                  Suscríbete
                 </a>
               </li>
               <li>
                 <a href="contact.html">
-                  Contact Us
+                  Contactanos
                 </a>
               </li>
             </ul>
