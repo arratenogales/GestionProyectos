@@ -50,13 +50,13 @@
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.html">Inicio</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="incidencias.html"> Incidencias </a>
+                  <a class="nav-link" href="incidencias.html"> Incidencias <span class="sr-only">(current)</span> </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"> Services </a>
+                  <a class="nav-link" href="servicios.html"> Services </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contactanos</a>
@@ -83,18 +83,19 @@
       </h3>
     </div>
 
-    <div>
+    <div class="container text-center mt-5">
       <h3>Seleccione el Tipo de Objeto dañado</h3>
-      <select id="tipo_objeto" onchange="mostrarFormulario()">
+      <select id="tipo_objeto" onchange="mostrarFormulario()" class="form-control mt-3" style="height: 60px;">
         <option value="">Seleccionar</option>
-        <option value="electrodomestico">Electrodomestico</option>
-        <option value="fontaneria">Fontaneria</option>
+        <option value="electrodomestico">Electrodoméstico</option>
+        <option value="fontaneria">Fontanería</option>
         <option value="electricidad">Electricidad</option>
         <option value="carpintería">Carpintería</option>
         <option value="seguridad">Seguridad</option>
-        <option value="jardineria">Jardineria</option>
+        <option value="jardineria">Jardinería</option>
       </select>
     </div>
+    
 
     <div class="container layout_padding2-top">
       <p>Una vez seleccione la tipologia de su entorno dañado sebera enviar tres imágenes. La primera imagen deberá sacarse de frente, la segunda imagen del perfil derecho y la tercera del perfil izquierdo. La respuesta será enviada en cuestión de horas gracias a nuestro sistema de IA. También deberás facilitar el número de teléfono. Aquí abajo.</p>
@@ -110,8 +111,7 @@
               <input type="file" name="image2" id="image2" required><br>
               <label for="image3">Imagen 3 (Perfil izquierdo):</label>
               <input type="file" name="image3" id="image3"><br>
-              <!-- Botón de envío -->
-              <button type="submit">Enviar</button>
+              
             </form>
           </div>
 
@@ -119,29 +119,35 @@
             <div id="preguntas_electrodomestico" style="display: none;">
               <label for="electrodomestico">¿Cuál es el electrodoméstico que se ha estropeado?</label>
               <input type="text" name="electrodomestico" id="electrodomestico" required>
+              
               <label for="descripcion_problema">¿Puedes describir el problema que estás experimentando con el electrodoméstico?</label>
-              <textarea name="descripcion_problema" id="descripcion_problema" rows="4" required></textarea>
+              <textarea name="descripcion_problema" id="descripcion_problema" rows="4" style="width: 100%;" required></textarea>
+              
               <label for="fecha_problema">¿Desde cuándo has notado que el electrodoméstico no funciona correctamente?</label>
               <input type="date" name="fecha_problema" id="fecha_problema" required>
+              
               <label for="solucion_previa">¿Has realizado algún intento de solucionar el problema por tu cuenta?</label>
-              <textarea name="solucion_previa" id="solucion_previa" rows="4"></textarea>
+              <textarea name="solucion_previa" id="solucion_previa" rows="4" style="width: 100%;"></textarea>
+              
               <label for="mensaje_error">¿El electrodoméstico muestra algún mensaje de error o señalización?</label>
               <input type="text" name="mensaje_error" id="mensaje_error">
+              
               <label for="tipo_incidente">¿El problema ocurrió repentinamente o fue gradual?</label>
               <select name="tipo_incidente" id="tipo_incidente">
                 <option value="repentinamente">Repentinamente</option>
                 <option value="gradual">Gradual</option>
               </select>
             </div>
+            
             <!-- Fin de preguntas para electrodomésticos -->
 
              <!-- Preguntas para fontanería -->
-            <div id="preguntas_fontaneria" style="display: none;">
+             <div id="preguntas_fontaneria" style="display: none;">
               <label for="problema_especifico">¿Cuál es el problema específico que estás experimentando con la fontanería?</label>
-              <textarea name="problema_especifico" id="problema_especifico" rows="4" required></textarea>
+              <textarea name="problema_especifico" id="problema_especifico" rows="4" style="width: 100%;" required></textarea>
             
               <label for="ubicacion_problema">¿En qué parte de la casa o edificio ocurrió el problema de fontanería?</label>
-              <textarea name="ubicacion_problema" id="ubicacion_problema" rows="4" required></textarea>
+              <textarea name="ubicacion_problema" id="ubicacion_problema" rows="4" style="width: 100%;" required></textarea>
             
               <label for="filtracion_humedad">¿Has notado algún tipo de filtración de agua o humedad?</label>
               <select name="filtracion_humedad" id="filtracion_humedad" required>
@@ -150,13 +156,13 @@
               </select>
             
               <label for="duracion_problema">¿Cuánto tiempo llevas experimentando este problema de fontanería?</label>
-              <input type="text" name="duracion_problema" id="duracion_problema" required>
+              <input type="text" name="duracion_problema" id="duracion_problema" style="width: 100%;" required>
             
               <label for="solucion_previa_fontaneria">¿Has intentado solucionar el problema por tu cuenta? Si es así, ¿qué medidas has tomado?</label>
-              <textarea name="solucion_previa_fontaneria" id="solucion_previa_fontaneria" rows="4"></textarea>
+              <textarea name="solucion_previa_fontaneria" id="solucion_previa_fontaneria" rows="4" style="width: 100%;"></textarea>
             
               <label for="causa_problema">¿Hay algún evento o circunstancia que pueda haber causado el problema de fontanería, como una tubería congelada, una obstrucción, etc.?</label>
-              <textarea name="causa_problema" id="causa_problema" rows="4"></textarea>
+              <textarea name="causa_problema" id="causa_problema" rows="4" style="width: 100%;"></textarea>
             
               <label for="cambios_agua">¿Has notado cambios en la presión del agua o en la temperatura del agua en los grifos afectados?</label>
               <select name="cambios_agua" id="cambios_agua" required>
@@ -164,123 +170,131 @@
                 <option value="no">No</option>
               </select>
             </div>
+            
             <!-- Fin de preguntas para fontanería -->
 
             <!-- Preguntas para electricidad -->
             <div id="preguntas_electricidad" style="display: none;">
-            
+
               <label for="problema_especifico_electricidad">¿Cuál es el problema específico que estás experimentando con la electricidad?</label>
-              <textarea name="problema_especifico_electricidad" id="problema_especifico_electricidad" rows="4" required></textarea>
+              <textarea name="problema_especifico_electricidad" id="problema_especifico_electricidad" rows="4" style="width: 100%;" required></textarea>
             
               <label for="area_problema_electricidad">¿En qué área de la casa o edificio ocurrió el problema eléctrico?</label>
-              <textarea name="area_problema_electricidad" id="area_problema_electricidad" rows="4" required></textarea>
+              <textarea name="area_problema_electricidad" id="area_problema_electricidad" rows="4" style="width: 100%;" required></textarea>
             
               <label for="fenomeno_anormal_electricidad">¿Has notado algún chispazo, destello o algún otro fenómeno anormal relacionado con la electricidad?</label>
-              <select name="fenomeno_anormal_electricidad" id="fenomeno_anormal_electricidad" required>
+              <select name="fenomeno_anormal_electricidad" id="fenomeno_anormal_electricidad" style="width: 100%;" required>
                 <option value="si">Sí</option>
                 <option value="no">No</option>
               </select>
             
               <label for="tiempo_problema_electricidad">¿Desde cuándo has notado que el suministro eléctrico no funciona correctamente?</label>
-              <input type="text" name="tiempo_problema_electricidad" id="tiempo_problema_electricidad" required>
+              <input type="text" name="tiempo_problema_electricidad" id="tiempo_problema_electricidad" style="width: 100%;" required>
             
               <label for="solucion_previa_electricidad">¿Has realizado algún intento de solucionar el problema por tu cuenta? Si es así, ¿qué medidas has tomado?</label>
-              <textarea name="solucion_previa_electricidad" id="solucion_previa_electricidad" rows="4"></textarea>
+              <textarea name="solucion_previa_electricidad" id="solucion_previa_electricidad" rows="4" style="width: 100%;"></textarea>
             
               <label for="afectacion_instalacion_electrica">¿El problema afecta a toda la instalación eléctrica de la casa o solo a ciertos circuitos?</label>
-              <select name="afectacion_instalacion_electrica" id="afectacion_instalacion_electrica" required>
+              <select name="afectacion_instalacion_electrica" id="afectacion_instalacion_electrica" style="width: 100%;" required>
                 <option value="toda_instalacion">Toda la instalación</option>
                 <option value="ciertos_circuitos">Solo ciertos circuitos</option>
               </select>
             
               <label for="revision_panel_electricidad">¿Has comprobado si hay fusibles fundidos o interruptores automáticos desactivados en el panel eléctrico?</label>
-              <select name="revision_panel_electricidad" id="revision_panel_electricidad" required>
+              <select name="revision_panel_electricidad" id="revision_panel_electricidad" style="width: 100%;" required>
                 <option value="si">Sí</option>
                 <option value="no">No</option>
               </select>
             </div>
+            
             <!-- Fin de preguntas para electricidad -->
 
             <!-- Preguntas para carpintería -->
             <div id="preguntas_carpinteria" style="display: none;">
+
               <label for="tipo_mueble">¿Qué tipo de mueble o estructura necesitas reparar?</label>
-              <input type="text" name="tipo_mueble" id="tipo_mueble" required>
+              <input type="text" name="tipo_mueble" id="tipo_mueble" style="width: 100%;" required>
             
               <label for="material_utilizado">¿Qué material se utilizó en la construcción del mueble o estructura?</label>
-              <input type="text" name="material_utilizado" id="material_utilizado" required>
+              <input type="text" name="material_utilizado" id="material_utilizado" style="width: 100%;" required>
             
               <label for="problema_especifico">¿Cuál es el problema específico que estás experimentando con la carpintería?</label>
-              <textarea name="problema_especifico" id="problema_especifico" rows="4" required></textarea>
+              <textarea name="problema_especifico" id="problema_especifico" rows="4" style="width: 100%;" required></textarea>
             
               <label for="ubicacion_mueble">¿Dónde se encuentra ubicado el mueble o estructura que necesita reparación?</label>
-              <textarea name="ubicacion_mueble" id="ubicacion_mueble" rows="4" required></textarea>
+              <textarea name="ubicacion_mueble" id="ubicacion_mueble" rows="4" style="width: 100%;" required></textarea>
             
               <label for="duracion_problema">¿Desde cuándo has notado que el mueble o estructura presenta problemas?</label>
-              <input type="text" name="duracion_problema" id="duracion_problema" required>
+              <input type="text" name="duracion_problema" id="duracion_problema" style="width: 100%;" required>
             
               <label for="solucion_previa_carpinteria">¿Has realizado alguna reparación o modificación en el mueble o estructura por tu cuenta anteriormente?</label>
-              <textarea name="solucion_previa_carpinteria" id="solucion_previa_carpinteria" rows="4"></textarea>
+              <textarea name="solucion_previa_carpinteria" id="solucion_previa_carpinteria" rows="4" style="width: 100%;"></textarea>
             
               <label for="causa_problema">¿Hay alguna circunstancia particular que pueda haber causado el problema, como humedad, desgaste, daño accidental, etc.?</label>
-              <textarea name="causa_problema" id="causa_problema" rows="4"></textarea>
+              <textarea name="causa_problema" id="causa_problema" rows="4" style="width: 100%;"></textarea>
             </div>
+            
 
               <!-- Preguntas para seguridad -->
-            <div id="preguntas_seguridad" style="display: none;">
-              <label for="tipo_sistema">¿Cuál es el tipo de sistema de seguridad que ha experimentado problemas?</label>
-              <input type="text" name="tipo_sistema" id="tipo_sistema" required>
+              <div id="preguntas_seguridad" style="display: none;">
 
-              <label for="componente_problema">¿Qué componente específico del sistema de seguridad está causando el problema?</label>
-              <input type="text" name="componente_problema" id="componente_problema" required>
-
-              <label for="fecha_problema_seguridad">¿Desde cuándo has notado que el sistema de seguridad no funciona correctamente?</label>
-              <input type="date" name="fecha_problema_seguridad" id="fecha_problema_seguridad" required>
-
-              <label for="comportamiento_inusual">¿Has notado algún comportamiento inusual o señales de mal funcionamiento en el sistema de seguridad?</label>
-              <textarea name="comportamiento_inusual" id="comportamiento_inusual" rows="4"></textarea>
-
-              <label for="intentos_solucion">¿Has realizado algún intento de solucionar el problema por tu cuenta? Si es así, ¿qué medidas has tomado?</label>
-              <textarea name="intentos_solucion" id="intentos_solucion" rows="4"></textarea>
-
-              <label for="afecta_instalacion">¿El problema afecta a toda la instalación de seguridad o solo a ciertas áreas?</label>
-              <select name="afecta_instalacion" id="afecta_instalacion" required>
+                <label for="tipo_sistema">¿Cuál es el tipo de sistema de seguridad que ha experimentado problemas?</label>
+                <input type="text" name="tipo_sistema" id="tipo_sistema" style="width: 100%;" required>
+              
+                <label for="componente_problema">¿Qué componente específico del sistema de seguridad está causando el problema?</label>
+                <input type="text" name="componente_problema" id="componente_problema" style="width: 100%;" required>
+              
+                <label for="fecha_problema_seguridad">¿Desde cuándo has notado que el sistema de seguridad no funciona correctamente?</label>
+                <input type="date" name="fecha_problema_seguridad" id="fecha_problema_seguridad" style="width: 100%;" required>
+              
+                <label for="comportamiento_inusual">¿Has notado algún comportamiento inusual o señales de mal funcionamiento en el sistema de seguridad?</label>
+                <textarea name="comportamiento_inusual" id="comportamiento_inusual" rows="4" style="width: 100%;"></textarea>
+              
+                <label for="intentos_solucion">¿Has realizado algún intento de solucionar el problema por tu cuenta? Si es así, ¿qué medidas has tomado?</label>
+                <textarea name="intentos_solucion" id="intentos_solucion" rows="4" style="width: 100%;"></textarea>
+              
+                <label for="afecta_instalacion">¿El problema afecta a toda la instalación de seguridad o solo a ciertas áreas?</label>
+                <select name="afecta_instalacion" id="afecta_instalacion" style="width: 100%;" required>
                   <option value="toda_instalacion">Toda la instalación</option>
                   <option value="ciertas_areas">Solo ciertas áreas</option>
-              </select>
-            </div>
+                </select>
+              </div>
+              
             <!-- Fin de preguntas para seguridad -->
             
             <!-- Preguntas para jardinería -->
             <div id="preguntas_jardineria" style="display: none;">
+
               <label for="problema_especifico_jardineria">¿Cuál es el problema específico que estás experimentando con el mantenimiento de jardines y exteriores?</label>
-              <textarea name="problema_especifico_jardineria" id="problema_especifico_jardineria" rows="4" required></textarea>
+              <textarea name="problema_especifico_jardineria" id="problema_especifico_jardineria" rows="4" style="width: 100%;" required></textarea>
             
               <label for="area_problema_jardineria">¿En qué área del jardín o exterior ocurrió el problema?</label>
-              <textarea name="area_problema_jardineria" id="area_problema_jardineria" rows="4" required></textarea>
+              <textarea name="area_problema_jardineria" id="area_problema_jardineria" rows="4" style="width: 100%;" required></textarea>
             
               <label for="cambio_inusual_jardineria">¿Has notado algún cambio inusual en el crecimiento de las plantas o en el aspecto del césped?</label>
-              <select name="cambio_inusual_jardineria" id="cambio_inusual_jardineria" required>
+              <select name="cambio_inusual_jardineria" id="cambio_inusual_jardineria" style="width: 100%;" required>
                 <option value="si">Sí</option>
                 <option value="no">No</option>
               </select>
             
               <label for="duracion_problema_jardineria">¿Desde cuándo has notado que el mantenimiento del jardín o exterior no se está realizando correctamente?</label>
-              <input type="text" name="duracion_problema_jardineria" id="duracion_problema_jardineria" required>
+              <input type="text" name="duracion_problema_jardineria" id="duracion_problema_jardineria" style="width: 100%;" required>
             
               <label for="solucion_previa_jardineria">¿Has realizado algún intento de solucionar el problema por tu cuenta? Si es así, ¿qué medidas has tomado?</label>
-              <textarea name="solucion_previa_jardineria" id="solucion_previa_jardineria" rows="4"></textarea>
+              <textarea name="solucion_previa_jardineria" id="solucion_previa_jardineria" rows="4" style="width: 100%;"></textarea>
             
               <label for="factores_externos_jardineria">¿Hay algún factor externo que pueda estar contribuyendo al problema, como el clima, la presencia de plagas o animales, etc.?</label>
-              <textarea name="factores_externos_jardineria" id="factores_externos_jardineria" rows="4"></textarea>
+              <textarea name="factores_externos_jardineria" id="factores_externos_jardineria" rows="4" style="width: 100%;"></textarea>
             
               <label for="danio_estructural_jardineria">¿Has observado algún daño estructural en elementos como cercas, muebles de jardín, iluminación exterior, entre otros?</label>
-              <select name="danio_estructural_jardineria" id="danio_estructural_jardineria" required>
+              <select name="danio_estructural_jardineria" id="danio_estructural_jardineria" style="width: 100%;" required>
                 <option value="si">Sí</option>
                 <option value="no">No</option>
               </select>
             </div>
-            <!-- Fin de preguntas para jardinería -->
             
+            <!-- Fin de preguntas para jardinería -->
+            <!-- Botón de envío -->
             <button type="submit">Enviar</button>
           </form>
         </div>
