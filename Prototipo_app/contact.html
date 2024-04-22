@@ -31,7 +31,7 @@
 
   <script>
     function validarTelefono() {
-      var telefono = document.getElementById('telefono').value;
+      var telefono = document.getElementsByName('telefono')[0].value;
       var regex = /^[0-9]+$/; // Expresión regular que valida si el valor contiene solo números
       
       if (!telefono.match(regex)) {
@@ -107,7 +107,7 @@
               <input type="email" placeholder="CORREO ELECTRONICO">
             </div>
             <div>
-              <input type="text" id="telefono" placeholder="NÚMERO DE TELÉFONO" required>
+              <input type="text" name="telefono" placeholder="NÚMERO DE TELÉFONO" required>
               <small id="telefonoError" style="color: red; display: none;">Por favor, introduce solo números en el campo de teléfono.</small>
             </div>
             <div>
