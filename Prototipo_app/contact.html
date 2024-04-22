@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-#prueba
+
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Heustonn</title>
+  <title>HogarProtegido</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -27,6 +27,20 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+
+
+  <script>
+    function validarTelefono() {
+      var telefono = document.getElementById('telefono').value;
+      var regex = /^[0-9]+$/; // Expresión regular que valida si el valor contiene solo números
+      
+      if (!telefono.match(regex)) {
+        alert("Por favor, introduce solo números en el campo de teléfono.");
+        return false;
+      }
+      return true;
+    }
+  </script>
 </head>
 
 <body>
@@ -93,7 +107,8 @@
               <input type="email" placeholder="CORREO ELECTRONICO">
             </div>
             <div>
-              <input type="text" placeholder="NÚMERO DE TELÉFONO">
+              <input type="text" id="telefono" placeholder="NÚMERO DE TELÉFONO" required>
+              <small id="telefonoError" style="color: red; display: none;">Por favor, introduce solo números en el campo de teléfono.</small>
             </div>
             <div>
               <select name="" id="">
