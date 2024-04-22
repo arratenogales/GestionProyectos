@@ -27,9 +27,50 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    /* Estilos del pop-up */
+    .discount-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+
+    .discount-popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .discount-popup-content button {
+      margin-top: 10px;
+    }
+
+    .discount-popup-content input {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="discount-popup" class="discount-popup">
+    <div class="discount-popup-content">
+      <span class="close" onclick="closeDiscountPopup()">&times;</span>
+      <h2>OBTENER DESCUENTO</h2>
+      <p>Introduce el código de descuento PRIMERA para obtener un 50% de descuento en tu primera incidencia:</p>
+      <input type="text" id="discount-code" placeholder="Introduce el código aquí">
+      <button onclick="applyDiscount()">Aplicar descuento</button>
+    </div>
+  </div>
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -676,6 +717,33 @@
     </section>
     <!-- footer section -->
 
+
+    <script>
+      function closeDiscountPopup() {
+        var discountPopup = document.getElementById("discount-popup");
+        discountPopup.style.display = "none";
+      }
+
+      // Función para aplicar el descuento
+      function applyDiscount() {
+        var discountCode = document.getElementById("discount-code").value;
+        if (discountCode === "PRIMERA") { 
+          alert("¡Descuento aplicado! Se ha aplicado un 50% de descuento en tu primera incidencia.");
+          closeDiscountPopup();
+        } else {
+          alert("Código de descuento inválido. Por favor, verifica e intenta nuevamente.");
+        }
+      }
+
+      // Función para mostrar el pop-up automáticamente al cargar la página
+      function showDiscountPopup() {
+        var discountPopup = document.getElementById("discount-popup");
+        discountPopup.style.display = "block";
+      }
+  
+      // Llama a la función para mostrar el pop-up al cargar la página
+      showDiscountPopup();
+    </script>
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
