@@ -423,14 +423,17 @@ a:focus {
   background-color: #ffffff;
 }
 
-.contact_section input,
-.contact_section select {
+.contact_section input[type="text"],
+.contact_section input[type="email"],
+.contact_section input[type="tel"],
+.contact_section select,
+.contact_section textarea {
   width: 100%;
-  border: 0;
-  padding: 15px 12px;
-  background-color: #f2f2f2;
-  outline: none;
-  margin: 10px 0;
+  border: 1px solid #ccc; /* Borde delgado */
+  border-radius: 5px; /* Esquinas redondeadas */
+  padding: 12px; /* Espaciado interno */
+  margin-bottom: 15px; /* Margen inferior */
+  font-size: 16px; /* Tamaño de fuente */
 }
 
 .contact_section input::placeholder,
@@ -571,6 +574,9 @@ a:focus {
 .footer_section a {
   color: #171717;
 }
+
+
+
 
 /* end footer section*/
 
