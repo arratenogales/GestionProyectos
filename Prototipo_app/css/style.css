@@ -281,7 +281,7 @@ a:focus {
 }
 
 .service_section .box.b-2 .detail-box p {
-  height: 60px;
+  height: 50px;
   overflow: hidden;
 }
 
@@ -290,7 +290,7 @@ a:focus {
 }
 
 .service_section .box.b-3 .detail-box {
-  width: 70%;
+  width: 60%;
   margin-left: auto;
   overflow: hidden;
   text-align: left;
@@ -305,13 +305,16 @@ a:focus {
   min-width: 100px;
 }
 
+
 .service_section .img-box img {
   height: 200px;
 }
 
+
 .service_section .detail-box {
-  height: 118px;
+  height: auto; 
   margin-top: 10px;
+  overflow: visible; 
 }
 
 .service_section .detail-box h6 {
